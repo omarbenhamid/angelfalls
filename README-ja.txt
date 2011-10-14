@@ -1,9 +1,9 @@
-■Kanon Project  
+■Angel Falls  
 
 ■はじめに
 オープンソースでプロジェクトをガントチャートで管理できるソフトウェアとして、OpenProjがあります。
 しかしながら、メンテナンスが全くされていない。バグが多い(そもそもビルドできない)などOSSとしては問題
-があります。KanonはOpenProjをベースに、バグフィックスや機能拡張を行ったプロジェクト管理ソフトウェアです。
+があります。Angel FallsはOpenProjをベースに、バグフィックスや機能拡張を行ったプロジェクト管理ソフトウェアです。
 
 MS Projectと同じフィールでプロジェクトを管理することができます。また、Trac/Redminなどのチケットシステムとの
 連携も視野に入れています。
@@ -11,7 +11,7 @@ MS Projectと同じフィールでプロジェクトを管理することができます。また、Trac/Redmi
 
 ■ビルド
 ■■準備
-Kanonは、Mavenリポジトリにないjarを利用します。下記のコマンドによりjarをMavenリポジトリへインストールしてください。
+Angel Fallsは、Mavenリポジトリにないjarを利用します。下記のコマンドによりjarをMavenリポジトリへインストールしてください。
 
 [Windows]
 > install-jar.bat
@@ -25,7 +25,7 @@ $ install-jar.sh
 $ mvn install
 
 ■■パッケージ作成
-下記のコマンドを実行すると、KanonProject-x.x.x.zipという名前で配布ファイルが作成されます。
+下記のコマンドを実行すると、AngelFalls-x.x.x.zipという名前で配布ファイルが作成されます。
 
 $ cd pkg
 $ mvn assembly:assembly
@@ -37,9 +37,9 @@ $ mvn webstart:jnlp
 と入力してください。target/jnlpディレクトリに署名済みのjarとjnlpファイルが作成されます。
 
 ■■実行
-pkg/targetディレクトリに生成されたzipを展開して、binディレクトリの kanon.bat or kanon スリプトを実行します。
+pkg/targetディレクトリに生成されたzipを展開して、binディレクトリの angelfalls.bat or kanon スリプトを実行します。
 
 
 ■謝辞
-Kanon ProjectはSennaProjityにより開発されたOpenProjをもとに開発されています。
+Angel FallsはSennaProjityにより開発されたOpenProjをもとに開発されています。
 OpenProjについては、http://openproj.org/をご覧ください。

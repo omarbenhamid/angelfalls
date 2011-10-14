@@ -5,24 +5,24 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.ultimania.kanon</groupId>
-	<artifactId>kanon-project-pkg</artifactId>
+	<artifactId>angelfalls-pkg</artifactId>
 	<version>0.9.0</version>
 	<packaging>jar</packaging>
-	<name>Kanon Project</name>
-	<url>http://kanon.ultimania.org</url>
+	<name>Angel Falls</name>
+	<url>https://github.com/alminium/angelfalls</url>
 	<organization>
-		<name>Kanon Lab</name>
-		<url>http://kanon.ultimania.org/</url>
+		<name>ALMinium Project</name>
+		<url>https://github.com/alminium/angelfalls/</url>
 	</organization>
 	<description>
-	   Kanon Project Manement Software. It supports Gantt chart and resource management.
+	   Angel Falls Manement Software. It supports Gantt chart and resource management.
 	</description>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.ultimania.kanon</groupId>
-			<artifactId>kanon-project-ui</artifactId>
-			<version>0.1.4-dev</version>
+			<artifactId>angelfalls-ui</artifactId>
+			<version>0.9.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>xerces</groupId>
@@ -66,7 +66,7 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<finalName>KanonProject-${version}</finalName>
+					<finalName>AngelFalls-${version}</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 					<descriptors>
 						<descriptor>src/main/assembly/bin.xml</descriptor>
@@ -92,7 +92,7 @@
 				</executions>
 			</plugin>
 
-			<!-- create kanon.bat, kanon scropt. -->
+			<!-- create angelfalls.bat, angelfalls script. -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
@@ -108,7 +108,7 @@
 					<programs>
 						<program>
 							<mainClass>com.projity.main.Main</mainClass>
-							<name>kanon</name>
+							<name>angelfalls</name>
 						</program>
 					</programs>
 				</configuration>
@@ -124,7 +124,7 @@
 
 			</plugin>
 
-			<!-- create kanon.bat, kanon scropt. -->
+			<!-- create angelfalls.bat, angelfalls script. -->
 			<plugin>
 				<groupId>org.codehaus.mojo.webstart</groupId>
 				<artifactId>webstart-maven-plugin</artifactId>
@@ -142,7 +142,7 @@
 					<excludeTransitive>true</excludeTransitive>
 					<dependencies>
 						<excludes>
-							<exclude>org.ultimania.kanon:kanon-project-ui</exclude>
+							<exclude>org.ultimania.kanon:angelfalls-ui</exclude>
 							<!--<exclude>Eclipse:jdtcore</exclude>-->
 						</excludes>
 						<includes>
@@ -150,13 +150,13 @@
 					</dependencies>
 
 					<sign>
-						<keystore>kanon.keystore</keystore>
-						<alias>kanon-key</alias>
-						<storepass>kanonlab</storepass>
-						<keypass>kanonlab</keypass>
-						<dnameCn>Kanon</dnameCn>
-						<dnameOu>Kanon</dnameOu>
-						<dnameO>Kanon</dnameO>
+						<keystore>alminium.keystore</keystore>
+						<alias>alminium-key</alias>
+						<storepass>angelfalls</storepass>
+						<keypass>angelfalls</keypass>
+						<dnameCn>ALMinium</dnameCn>
+						<dnameOu>ALMinium</dnameOu>
+						<dnameO>ALMinium</dnameO>
 						<dnameL>Kamakura</dnameL>
 						<dnameSt>Kanagawa</dnameSt>
 						<dnameC>JP</dnameC>

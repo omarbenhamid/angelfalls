@@ -68,7 +68,7 @@ public class VersionUtils {
 		try {
 
 			ResourceBundle bundle = ResourceBundle.getBundle("org.ultimania.kanon.version");
-			if (bundle!=null) version=bundle.getString("kanon.version");
+			if (bundle!=null) version=bundle.getString("angelfalls.version");
 
 		} catch (Exception e) {
 			log.error("Could not found org.ultimania.kanon.version.properties file.");
@@ -76,7 +76,7 @@ public class VersionUtils {
 		return version;
 	}
 	public static String getJnlpVersion(){
-		return System.getProperty("kanon.version");
+		return System.getProperty("angelfalls.version");
 	}
 
 	public static String toAppletVersion(String v){
@@ -105,10 +105,10 @@ public class VersionUtils {
 		if (version == null) // for running in debugger
 			version="0";
 		Preferences pref=Preferences.userNodeForPackage(VersionUtils.class);
-		String localVersion = pref.get("Kanon Version","unknown");
+		String localVersion = pref.get("Angel Falls Version","unknown");
 		boolean updated = !localVersion.equals(version);
 		String javaVersion = System.getProperty("java.version");
-		log.info("Kanon Version: "+version + " local version " + localVersion + " updated=" + updated + " java version=" + javaVersion);
+		log.info("Angel Falls Version: "+version + " local version " + localVersion + " updated=" + updated + " java version=" + javaVersion);
 
 
 		pref.put("JavaVersion",javaVersion);

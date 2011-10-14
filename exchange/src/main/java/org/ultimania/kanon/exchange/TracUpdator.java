@@ -67,7 +67,7 @@ public class TracUpdator {
 				}
 				try {
 					if(isModified)
-					client.update((int)t.getId(),fields,"update from Kanon Project.");
+					client.update((int)t.getId(),fields,"update from Angel Falls.");
 					t.setDirty(false);
 					t.setLastSavedStart(start);
 					t.setLastSavedFinish(end);

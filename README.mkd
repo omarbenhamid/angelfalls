@@ -1,7 +1,7 @@
-Kanon Project
+Angel Falls
 =============
 
-Kanon Project is clone of OpenProj known as Ganttchat based 
+Angel Falls is OpenProj fork known as Ganttchat based 
 Project Management tool as MS Project. OpenProj is grate 
 PM tool but it have not been maintained any more. 
 So author decide clone and fixed bug, improve function.
@@ -22,7 +22,7 @@ Setup maven for your environment like:
     $ export MAVEN_OPTS="-Xmx500m -Xss128m"
 
 ### Install custom jars.
-Kanon Project needs custom jars. In the first
+Angel Falls needs custom jars. In the first
 you have to install them.
 
     $ bash install-jar.sh
@@ -35,7 +35,7 @@ Execute install and assembly like:
 
 Now you have ditribution:
 
-* pkg/target/KanonProject-0.1.4.zip
+* pkg/target/AngelFalls-0.1.4.zip
 
 If you want WebStart, execute webstart:jnlp instead of
 assembly:
@@ -45,13 +45,13 @@ assembly:
 Run
 ---
 
-Unpack pkg/target/KanonProject-x.x.x.zip and execute bin/kanon.bat.
+Unpack pkg/target/AngelFalls-x.x.x.zip and execute bin/angelfalls.bat.
 
-### Run Kanon Project with Trac
+### Run Angel Falls with Trac
 
-Kanon Project can integrated with trac. Run with:
+Angel Falls can integrated with trac. Run with:
 
-    $ java -jar lib/KanonProject-x.x.x.jar <TracURL> trac <username> <password>
+    $ java -jar lib/AngelFalls-x.x.x.jar <TracURL> trac <username> <password>
 
 You have to install TracXMLRPC plugin and the user have XML_RPC permission.
 

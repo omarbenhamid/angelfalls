@@ -3,18 +3,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.ultimania.kanon</groupId>
-	<artifactId>kanon-project-core</artifactId>
-	<version>0.2.0</version>
+	<artifactId>angelfalls-core</artifactId>
+	<version>0.9.0</version>
 	<packaging>jar</packaging>
 
-	<name>Kanon Project</name>
-	<url>http://kanon.ultimania.org</url>
+	<name>Angel Falls</name>
+	<url>https://github.com/alminium/angelfalls</url>
 	<organization>
-		<name>Kanon Lab</name>
-		<url>http://kanon.ultimania.org/</url>
+		<name>ALMinium Project</name>
+		<url>https://github.com/alminium/angelfalls/</url>
 	</organization>
 	<description>
-	   Kanon Project Manement Software. It supports Gantt chart and resource management.
+	   Angel Falls Manement Software. It supports Gantt chart and resource management.
 	</description>
 
 	<properties>
@@ -24,8 +24,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.ultimania.kanon</groupId>
-			<artifactId>kanon-project-contrib</artifactId>
-			<version>0.1-dev</version>
+			<artifactId>angelfalls-contrib</artifactId>
+			<version>0.9.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>

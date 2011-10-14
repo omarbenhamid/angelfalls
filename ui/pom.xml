@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ultimania.kanon</groupId>
-	<artifactId>kanon-project-ui</artifactId>
-	<version>0.1.4-dev</version>
+	<artifactId>angelfalls-ui</artifactId>
+	<version>0.9.0</version>
 	<packaging>jar</packaging>
 
-	<name>Kanon Project</name>
-	<url>http://kanon.ultimania.org</url>
+	<name>Angel Falls</name>
+	<url>https://github.com/alminium/angelfalls</url>
 	<organization>
-		<name>Kanon Lab</name>
-		<url>http://kanon.ultimania.org/</url>
+		<name>ALMinium Project</name>
+		<url>https://github.com/alminium/angelfalls/</url>
 	</organization>
 	<description>
-	   Kanon Project Manement Software. It supports Gantt chart and resource management.
+	   Angel Falls Manement Software. It supports Gantt chart and resource management.
 	</description>
 
 	<properties>
@@ -25,8 +25,8 @@
 
 		<dependency>
 			<groupId>org.ultimania.kanon</groupId>
-			<artifactId>kanon-project-exchange</artifactId>
-			<version>0.1.1-dev</version>
+			<artifactId>angelfalls-exchange</artifactId>
+			<version>0.9.0</version>
 		</dependency>
 
 		<dependency>
@@ -61,8 +61,8 @@
 
 		<dependency>
 			<groupId>org.ultimania.kanon</groupId>
-			<artifactId>kanon-project-reports</artifactId>
-			<version>0.1-dev</version>
+			<artifactId>angelfalls-reports</artifactId>
+			<version>0.9.0</version>
 		</dependency>
 
 		<dependency>

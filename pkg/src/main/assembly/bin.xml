@@ -27,7 +27,7 @@
         <dependencySet>
             <outputDirectory>lib</outputDirectory>
              <includes>
-                 <include>org.ultimania.kanon:kanon-project-pkg</include>
+                 <include>org.ultimania.kanon:angelfalls-pkg</include>
              </includes>
         </dependencySet>
     </dependencySets>
