@@ -42,6 +42,10 @@ assembly:
 
     $ mvn webstart:jnlp
 
+Then you obtain WebStart resources in pkg/target/jnlp.
+Don't forget modify codebase in launch.jnlp for your 
+web site.
+
 Run
 ---
 
