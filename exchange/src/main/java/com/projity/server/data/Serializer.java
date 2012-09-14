@@ -821,11 +821,15 @@ public class Serializer {
     		for (Iterator i=resources.iterator();i.hasNext();){
     			ResourceData resourceData=(ResourceData)i.next();
     			ResourceImpl resource=deserializeResourceAndAddToPool(resourceData,resourcePool,reindex,enterpriseResources);
-    			Resource origImpl =  _localResourceMap.get(resourceData.getUniqueId());
-    			//old code below
-    			//resourceNodeMap.put(resourceData.getEnterpriseResource(),NodeFactory.getInstance().createNode(resource));
-    			//replaced with change for DEF165936
-    			resourceNodeMap.put(resourceData.getEnterpriseResource(),NodeFactory.getInstance().createNode(origImpl));
+    			
+    			if(_localResourceMap != null) { 
+    				//The import job provided the Serialized with a "original" resource map
+    				//replaced with change for DEF165936
+	    			Resource origImpl =  _localResourceMap.get(resourceData.getUniqueId());
+	    			resourceNodeMap.put(resourceData.getEnterpriseResource(),NodeFactory.getInstance().createNode(origImpl));
+	    		}
+    			else 
+    				resourceNodeMap.put(resourceData.getEnterpriseResource(),NodeFactory.getInstance().createNode(resource));
     		}
     	project.setResourcePool(resourcePool);
 
