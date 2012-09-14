@@ -36,6 +36,7 @@ public class ExtendedDateFormat extends SimpleDateFormat {
 	public void applyPattern(String pattern) {
 		quarter=false;
 		half=false;
+		
 		normal=false;
 		if (pattern.startsWith("Q")){
 			int l=pattern.startsWith("QQ")?2:1;
@@ -51,7 +52,11 @@ public class ExtendedDateFormat extends SimpleDateFormat {
 			half=true;
 		}
 		if (pattern.length()>0){
-			super.applyPattern(pattern);
+			try {
+				super.applyPattern(pattern);
+			}catch(IllegalArgumentException iae) {
+				throw new IllegalArgumentException("Check OpenProj configuration.xml : bad date pattern : " + pattern, iae);
+			}
 			normal=true;
 		}
 	}

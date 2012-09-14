@@ -60,3 +60,11 @@ Angel Falls can integrated with trac. Run with:
 You have to install TracXMLRPC plugin and the user have XML_RPC permission.
 
 Takashi Okamoto
+
+
+######
+OB Additions
+Short :
+Scroll = vertical scroll
+Alt+Wheel = horizontal scroll
+Ctrl + Wheel : zoom in / out

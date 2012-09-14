@@ -52,6 +52,7 @@ package com.projity.pm.graphic.views;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.InputEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.util.ArrayList;
@@ -184,13 +185,28 @@ public class GanttView extends SplittedView implements BaseView, ScheduleEventLi
 //				}
 //			}
 //		});
-
-		leftScrollPane.getViewport().addMouseWheelListener(new MouseWheelListener(){
+		
+		MouseWheelListener scrollManager = new MouseWheelListener(){
 			public void mouseWheelMoved(MouseWheelEvent e) {
-				Component c = gantt.getParent();
-				if (c instanceof JViewport){
+				if(0 != (e.getModifiers() & InputEvent.ALT_MASK)) {
+					Component c = e.getComponent();
+					while((c != null) && ! (c instanceof JViewport)) c = c.getParent();
 					JViewport vp=(JViewport)c;
 					Point p = vp.getViewPosition();
+					int newX = p.x+e.getUnitsToScroll()*getWidth()/20;
+					if(newX>0){
+						p.x = newX;
+					} else{
+						p.x=0;
+					}
+					vp.setViewPosition(p);
+				}else if (0 != (e.getModifiers() & InputEvent.CTRL_MASK))  {
+					zoom(-e.getUnitsToScroll()/3);
+				}else{
+					//Vertical scroll allways on gantt chart
+					JViewport vp=(JViewport)gantt.getParent();
+					Point p = vp.getViewPosition();
+					
 					int newY = p.y+e.getUnitsToScroll()*gantt.getRowHeight();
 					if(newY>0){
 						p.y = newY;
@@ -200,25 +216,12 @@ public class GanttView extends SplittedView implements BaseView, ScheduleEventLi
 					vp.setViewPosition(p);
 				}
 			}
-		});
+		};
 
-		gantt.addMouseWheelListener(new MouseWheelListener(){
-			public void mouseWheelMoved(MouseWheelEvent e) {
-				Component c = gantt.getParent();
-				if (c instanceof JViewport){
-					JViewport vp=(JViewport)c;
-					Point p = vp.getViewPosition();
-					int newY = p.y+e.getUnitsToScroll()*gantt.getRowHeight();
-					if(newY>0){
-						p.y = newY;
-					} else{
-						p.y=0;
-					}
-					vp.setViewPosition(p);
-				}
-			}
-		});
+		leftScrollPane.getViewport().addMouseWheelListener(scrollManager);
 
+		gantt.addMouseWheelListener(scrollManager);
+		
 		cache.update();
 
 		//Call this last to be sure everything is initialized
@@ -381,6 +384,10 @@ public class GanttView extends SplittedView implements BaseView, ScheduleEventLi
 	public boolean canZoomOut() {
 		return coord.canZoomOut();
 	}
+	public void zoom(int steps) {
+		coord.zoom(steps);
+	}
+	
 	public int getScale() {
 		return coord.getTimescaleManager().getCurrentScaleIndex();
 	}

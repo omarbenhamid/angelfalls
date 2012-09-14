@@ -902,7 +902,8 @@ public class Serializer {
     				if (!task1.isExternal() && task2.isExternal()) return -1; //keep external tasks at the end
     				else if (task1.isExternal() && !task2.isExternal()) return 1;
     				else if (task1.getChildPosition()>task2.getChildPosition()) return 1;
-    				else return -1;
+    				else if (task1.getChildPosition()<task2.getChildPosition()) return -1;
+    				else return Long.valueOf(task1.getUniqueId()).compareTo(task2.getUniqueId());
     			}
     		});
 

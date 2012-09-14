@@ -30,7 +30,7 @@ in Exhibits A and B of the license at http://www.projity.com/license. You should
 use the latest text at http://www.projity.com/license for your modifications.
 You may not remove this license text from the source files.]
 
-Attribution Information: Attribution Copyright Notice: Copyright © 2006, 2007 
+Attribution Information: Attribution Copyright Notice: Copyright ï¿½ 2006, 2007 
 Projity, Inc. Attribution Phrase (not exceeding 10 words): Powered by OpenProj, 
 an open source solution from Projity. Attribution URL: http://www.projity.com 
 Graphic Image as provided in the Covered Code as file:  openproj_logo.png with 
@@ -133,20 +133,25 @@ public class TimeScaleManager {
 		return getCurrentScaleIndex()<scales.size()-1;
 	}
 	public boolean zoomIn(){
-		if (getCurrentScaleIndex()>0){
-			currentScaleIndex--;
-			return true;
-			//fireTimeScaleChanged(this);
-		}else return false;
+		return zoom(1);
+	}
+	public boolean zoomOut(){
+		return zoom(-1);
+	}
+	/**
+	 * Zoom the requested steps as possible 
+	 * @param steps positive means zoom in, negative means zoom out
+	 * @return true if zoom has been performed, false is not.
+	 */
+	public boolean zoom(int steps){
+		int scale = currentScaleIndex;
+		currentScaleIndex -= steps;
+		currentScaleIndex = Math.max(currentScaleIndex, 0);
+		currentScaleIndex = Math.min(currentScaleIndex, scales.size()-1);
+		return currentScaleIndex != scale;
 	}
 	
-	public boolean zoomOut(){
-		if (getCurrentScaleIndex()<scales.size()-1){
-			currentScaleIndex++;
-			return true;
-			//fireTimeScaleChanged(this);
-		}else return false;
-	}
+	
 	public boolean zoomReset(){
 		if (currentScaleIndex!=defaultIndex){
 			currentScaleIndex=defaultIndex;

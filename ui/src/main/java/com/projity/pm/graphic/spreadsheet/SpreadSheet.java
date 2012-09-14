@@ -684,7 +684,7 @@ public class SpreadSheet extends CommonSpreadSheet implements Cloneable {
 			}
 		}
 	};
-
+	
 	//will be used later
 	protected SpreadSheetAction newResourceAction=new SpreadSheetAction("Spreadsheet.Action.new",this){
 		public void execute(){

@@ -203,14 +203,15 @@ public class CoordinatesConverter implements ScheduleEventListener, Serializable
     }
     
 	public void zoomIn(){
-		if(timescaleManager.zoomIn()){
-			updateLargeInterval(false);
-			fireTimeScaleChanged(this,TimeScaleEvent.SCALE_CHANGE);
-		}
+		zoom(1);
 	}
 	
 	public void zoomOut(){
-		if(timescaleManager.zoomOut()){
+		zoom(-1);
+	}
+	
+	public void zoom(int steps) {
+		if(timescaleManager.zoom(steps)){
 			updateLargeInterval(false);
 			fireTimeScaleChanged(this,TimeScaleEvent.SCALE_CHANGE);
 		}

@@ -777,10 +777,10 @@ must direct them back to http://www.projity.com.
 			pattern2="yyyy/MMM" />
 		<timescale calendarField1="2" number1="1" pattern1="MMM"
 			normalMinWidth="30" normalMinWidthChinese="36" tableMinWidth="51" calendarField2="2" number2="3"
-			pattern2="yyyy, QQ" />
+			pattern2="QQ /yyyy" />
 		<timescale calendarField1="2" number1="1" pattern1="MMM" trunc1="1" upperCase1="true"
 			normalMinWidth="15" tableMinWidth="51" calendarField2="2" number2="6"
-			pattern2="yyyy, LL" />
+			pattern2="LL /yyyy" />
 		<timescale calendarField1="2" number1="3" pattern1="Q"
 			normalMinWidth="20" tableMinWidth="51" calendarField2="1" number2="1"
 			pattern2="yyyy" />
