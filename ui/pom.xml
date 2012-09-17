@@ -27,6 +27,7 @@
 			<groupId>org.ultimania.kanon</groupId>
 			<artifactId>angelfalls-exchange</artifactId>
 			<version>0.9.0</version>
+			
 		</dependency>
 
 		<dependency>
@@ -57,6 +58,34 @@
 			<groupId>batik</groupId>
 			<artifactId>batik-svggen </artifactId>
 			<version>1.6-1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>xercesImpl</artifactId>
+					<groupId>xerces</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xmlParserAPIs</artifactId>
+					<groupId>xml-apis</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.ultimania.kanon</groupId>
+			<artifactId>angelfalls-reports</artifactId>
+			<version>0.9.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jdtcore</artifactId>
+					<groupId>eclipse</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.ultimania.kanon</groupId>
+			<artifactId>angelfalls-reports</artifactId>
+			<version>0.9.0</version>
 		</dependency>
 
 		<dependency>
