@@ -52,8 +52,17 @@ package com.projity.main;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.prefs.Preferences;
+
+import org.apache.felix.framework.Felix;
+import org.apache.felix.framework.util.FelixConstants;
+import org.openproj.osgi.WorkbenchActivator;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.Constants;
 
 import com.projity.strings.Messages;
 import com.projity.util.Environment;
@@ -63,6 +72,8 @@ import com.projity.util.Environment;
  *
  */
 public class Main {
+	private static Felix felix;
+	private static WorkbenchActivator mainActivator;
 	public static void main(String[] args) {
 		Preferences.userNodeForPackage(Main.class).putInt("runNumber",getRunNumber()+1);
 		Preferences.userNodeForPackage(Main.class).putLong("firstRun",getFirstRun());
@@ -92,7 +103,29 @@ public class Main {
 			} else formatedArgs=args;
 		} else formatedArgs=args;
 
-		com.projity.pm.graphic.gantt.Main.main(formatedArgs);
+		
+		mainActivator = new WorkbenchActivator(formatedArgs);
+		// Create a configuration property map.
+        Map<String,Object> config = new HashMap<String,Object>();
+        // Create host activator;
+        List<BundleActivator> list = new ArrayList();
+        list.add(mainActivator);
+        config.put(FelixConstants.SYSTEMBUNDLE_ACTIVATORS_PROP, list);
+        config.put(Constants.FRAMEWORK_SYSTEMPACKAGES_EXTRA,"org.openproj.osgi.spi");
+
+        try
+        {
+            // Now create an instance of the framework with
+            // our configuration properties.
+            felix = new Felix(config);
+            // Now start Felix instance.
+            felix.start();
+        }
+        catch (Exception ex)
+        {
+            System.err.println("Could not create framework: " + ex);
+            ex.printStackTrace();
+        }
 	}
 	public static int getRunNumber() {
 		return Preferences.userNodeForPackage(Main.class).getInt("runNumber",0);

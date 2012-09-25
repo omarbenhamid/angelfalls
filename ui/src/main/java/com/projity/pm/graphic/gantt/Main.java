@@ -68,6 +68,7 @@ import com.projity.util.Environment;
  */
 public class Main {
 	public static Log log = LogFactory.getLog(Main.class);
+	public static MainFrame mainFrame;
 	public static void main(String[] args) {
 		System.setProperty("com.apple.mrj.application.apple.menu.about.name", Environment.getStandAlone()?"OpenProj":"Project-ON-Demand");
 		System.setProperty("apple.laf.useScreenMenuBar","true");
@@ -107,8 +108,8 @@ public class Main {
 //			}
 //		}
 		ApplicationStartupFactory startupFactory=new ApplicationStartupFactory(opts); //put before to initialize standalone flag
-		MainFrame frame = new MainFrame(Messages.getContextString("Text.ApplicationTitle"), null, null);
+		mainFrame = new MainFrame(Messages.getContextString("Text.ApplicationTitle"), null, null);
 		boolean doWelcome = true; // to do see if project param exists in args
-		startupFactory.instanceFromNewSession(frame,doWelcome);
+		startupFactory.instanceFromNewSession(mainFrame,doWelcome);
 	}
 }

@@ -27,7 +27,6 @@
 			<groupId>org.ultimania.kanon</groupId>
 			<artifactId>angelfalls-exchange</artifactId>
 			<version>0.9.0</version>
-			
 		</dependency>
 
 		<dependency>
@@ -53,6 +52,12 @@
 			<artifactId>jfreechart </artifactId>
 			<version>1.0.9</version>
 		</dependency>
+		
+		<dependency>
+	      <groupId>org.apache.felix</groupId>
+	      <artifactId> org.apache.felix.main</artifactId>
+	      <version>4.0.3</version>
+	    </dependency>
 
 		<dependency>
 			<groupId>batik</groupId>
@@ -84,13 +89,13 @@
 
 		<dependency>
 			<groupId>org.ultimania.kanon</groupId>
-			<artifactId>angelfalls-reports</artifactId>
+			<artifactId>angelfalls-contrib</artifactId>
 			<version>0.9.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.ultimania.kanon</groupId>
-			<artifactId>angelfalls-reports</artifactId>
+			<artifactId>angelfalls-core</artifactId>
 			<version>0.9.0</version>
 		</dependency>
 
