@@ -284,6 +284,8 @@ must direct them back to http://www.projity.com.
 			</field>
 			<field property="critical" id="Field.critical"
 				readOnly="true" />
+			<field property="investmentMilestone" id="Field.investmentMilestone"
+				readOnly="false" />
 
 		</class>
 		<class name="com.projity.pm.snapshot.BaselineScheduleFields">
